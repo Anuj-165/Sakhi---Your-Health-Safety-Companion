@@ -1,0 +1,20 @@
+crime_type,law,description,punishment
+Dowry Death,IPC Section 304B,Death of a woman due to dowry harassment within 7 years of marriage.,Imprisonment of not less than 7 years up to life.
+Dowry Prohibition,"Dowry Prohibition Act, 1961","Giving, taking, or demanding dowry.","Imprisonment up to 5 years and fine of Rs. 15,000 or value of dowry."
+Domestic Violence,"Protection of Women from Domestic Violence Act, 2005","Physical, emotional, sexual, or economic abuse against women in domestic settings.","Protection orders, residence rights, compensation, imprisonment for breach of orders."
+Sexual Harassment at Workplace,"Sexual Harassment of Women at Workplace Act, 2013","Unwelcome sexual behaviour, physical contact, demands for sexual favours, showing pornography.","Termination, fine, and departmental action."
+Outraging Modesty of a Woman,IPC Section 354,Assault or use of criminal force intending to outrage modesty.,"Imprisonment 1 to 5 years, fine."
+Sexual Harassment,IPC Section 354A,"Unwelcome physical contact, demand for sexual favours, showing pornography, sexual remarks.",Rigorous imprisonment up to 3 years and/or fine.
+Assault with Intent to Disrobe,IPC Section 354B,Assaulting woman with intent to disrobe.,3 to 7 years imprisonment and fine.
+Voyeurism,IPC Section 354C,Watching or capturing images of women engaged in private acts without consent.,"1 to 3 years (first conviction), 3 to 7 years (repeat) + fine."
+Stalking,IPC Section 354D,"Following a woman, contacting repeatedly despite disinterest, monitoring internet/email usage.","Up to 3 years (first conviction), up to 5 years (repeat) + fine."
+Rape,IPC Section 376,Sexual intercourse without consent.,Imprisonment 7 years to life and fine.
+Gang Rape,IPC Section 376D,Rape by a group of persons.,"20 years to life imprisonment, fine."
+Rape of Minor,"POCSO Act, 2012",Sexual assault on children (under 18).,"7 years to life imprisonment, depending on severity."
+Cyber Harassment / Cyber Stalking,IT Act Section 67 & IPC 354D,"Publishing obscene material, stalking via internet, threatening or blackmailing online.","3 to 5 years imprisonment, fine up to 10 lakhs."
+Voyeurism (Online),IPC Section 354C + IT Act,Recording or sharing intimate images without consent.,"1 to 7 years imprisonment, fine."
+Acid Attack,IPC Section 326A,Causing permanent or partial damage/disfigurement by throwing acid.,"10 years to life imprisonment, fine."
+Attempted Acid Attack,IPC Section 326B,Attempting to throw or administer acid.,"5 to 7 years imprisonment, fine."
+Human Trafficking,IPC Section 370,Trafficking women for exploitation.,"7 years to life imprisonment, fine."
+Kidnapping for Marriage,IPC Section 366,Kidnapping or abducting a woman to compel marriage or illicit intercourse.,"10 years imprisonment, fine."
+Indecent Representation of Women,"Indecent Representation of Women (Prohibition) Act, 1986","Depiction of women in indecent or derogatory manner in ads, publications, etc.","Up to 2 years imprisonment, fine up to Rs. 2000 (first conviction)."
