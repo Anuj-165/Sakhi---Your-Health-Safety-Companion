@@ -53,7 +53,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 Sakhi. Made with <span className="text-primary">❤</span> for women empowerment.
+            © 2026 Sakhi. Made with <span className="text-primary">❤</span> for women empowerment.
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { EyeIcon, EyeSlashIcon, HeartIcon } from '@heroicons/react/24/outline';
-import api from '../../api/axios'; // Assuming you have an axios instance set up
+import api from '../api/axios'; // Assuming you have an axios instance set up
 
 const Signup = () => {
   const navigate = useNavigate();

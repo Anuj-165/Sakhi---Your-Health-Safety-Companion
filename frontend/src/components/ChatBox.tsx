@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useImperativeHandle, forwardRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PaperAirplaneIcon, SpeakerWaveIcon, MicrophoneIcon, StopIcon } from '@heroicons/react/24/outline';
-import api from '../../api/axios'; // Import the axios instance we discussed earlier
+import api from '../api/axios'; // Import the axios instance we discussed earlier
 
 interface Message {
   id: string;

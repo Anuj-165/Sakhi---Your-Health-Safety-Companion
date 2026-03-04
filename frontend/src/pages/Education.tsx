@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, BookOpenIcon, LanguageIcon } from '@heroicons/react/24/outline';
-import ChapterCard from '../../../components/ChapterCard';
-import BotAnimation from '../../../components/BotAnimation';
-import api from '../../api/axios';
+import ChapterCard from '../components/ChapterCard';
+import BotAnimation from '../components/BotAnimation';
+import api from '../api/axios';
 import { cleanOCRText } from '../utils/contentCleaner';
 
 interface BackendChapter {

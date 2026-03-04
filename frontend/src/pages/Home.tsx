@@ -11,7 +11,7 @@ import {
   ShieldCheckIcon,
   HeartIcon
 } from '@heroicons/react/24/outline';
-import BotAnimation from '../../../components/BotAnimation';
+import BotAnimation from '../components/BotAnimation';
 
 const Home = () => {
   const stats = [

@@ -7,7 +7,7 @@ import {
   MapPinIcon,
   PhoneIcon
 } from '@heroicons/react/24/outline';
-import api from '../../api/axios'; // Your axios instance
+import api from '../api/axios'; // Your axios instance
 
 interface Chemist {
   name: string;

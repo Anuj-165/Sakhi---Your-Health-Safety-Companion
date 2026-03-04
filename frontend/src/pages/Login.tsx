@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  EyeIcon, 
-  EyeSlashIcon, 
-  HeartIcon, 
-  ArrowRightOnRectangleIcon, 
-  UserCircleIcon,
-  EnvelopeIcon 
-} from '@heroicons/react/24/outline';
-import api from '../../api/axios';
+  Eye, 
+  EyeOff, 
+  Heart, 
+  LogOut, 
+  UserCircle, 
+  Mail 
+} from 'lucide-react';
+import api from '../api/axios';
 
 // Define the User interface based on your FastAPI route
 interface UserData {
@@ -31,7 +31,7 @@ const Login = () => {
     password: '',
   });
 
-  // Function to fetch user details
+  // Fetch user details
   const fetchUserProfile = async () => {
     try {
       const token = localStorage.getItem('token');
@@ -40,15 +40,15 @@ const Login = () => {
       const response = await api.get('/user/me', {
         headers: { Authorization: `Bearer ${token}` }
       });
+
       setUserData(response.data);
       setIsLoggedIn(true);
     } catch (err) {
       console.error("Failed to fetch user profile", err);
-      handleLogout(); // Clear stale tokens
+      handleLogout();
     }
   };
 
-  // Check login status on mount
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -63,7 +63,7 @@ const Login = () => {
 
     try {
       const loginParams = new URLSearchParams();
-      loginParams.append('username', formData.username); 
+      loginParams.append('username', formData.username);
       loginParams.append('password', formData.password);
 
       const response = await api.post('/user/login', loginParams, {
@@ -71,8 +71,8 @@ const Login = () => {
       });
 
       localStorage.setItem('token', response.data.access_token);
-      // After login, fetch the actual user data
       await fetchUserProfile();
+
     } catch (err: any) {
       const detail = err.response?.data?.detail || 'Invalid username or password';
       setError(typeof detail === 'string' ? detail : 'Login failed');
@@ -88,7 +88,7 @@ const Login = () => {
     navigate('/login');
   };
 
-  // --- PROFILE VIEW (DISPLAYING /me DATA) ---
+  // ---------------- Logged In View ----------------
   if (isLoggedIn && userData) {
     return (
       <div className="min-h-screen bg-calm-gradient flex items-center justify-center py-12 px-4">
@@ -100,20 +100,28 @@ const Login = () => {
           <div className="flex flex-col items-center mb-8">
             <div className="bg-primary-gradient p-1 rounded-full mb-4 shadow-lg">
               <div className="bg-white p-2 rounded-full">
-                <UserCircleIcon className="h-20 w-20 text-primary" />
+                <UserCircle className="h-20 w-20 text-primary" />
               </div>
             </div>
-            <h2 className="text-3xl font-bold text-gray-800">Hello, {userData.username}!</h2>
+
+            <h2 className="text-3xl font-bold text-gray-800">
+              Hello, {userData.username}!
+            </h2>
+
             <div className="flex items-center text-gray-500 mt-2 space-x-2">
-              <EnvelopeIcon className="h-4 w-4" />
+              <Mail className="h-4 w-4" />
               <span className="text-sm">{userData.email}</span>
             </div>
           </div>
           
           <div className="space-y-4">
             <div className="bg-gray-50 p-4 rounded-2xl text-left border border-gray-100 mb-4">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">User ID</p>
-              <p className="text-gray-700 font-mono text-sm">#SH-{userData.id.toString().padStart(4, '0')}</p>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">
+                User ID
+              </p>
+              <p className="text-gray-700 font-mono text-sm">
+                #SH-{userData.id.toString().padStart(4, '0')}
+              </p>
             </div>
 
             <button 
@@ -127,7 +135,7 @@ const Login = () => {
               onClick={handleLogout}
               className="w-full flex items-center justify-center space-x-2 py-4 bg-red-50 text-red-600 rounded-2xl font-bold hover:bg-red-100 transition-all border border-red-100"
             >
-              <ArrowRightOnRectangleIcon className="h-5 w-5" />
+              <LogOut className="h-5 w-5" />
               <span>Log Out</span>
             </button>
           </div>
@@ -136,10 +144,9 @@ const Login = () => {
     );
   }
 
-  // --- LOGIN FORM VIEW ---
+  // ---------------- Login Form View ----------------
   return (
     <div className="min-h-screen bg-calm-gradient flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      {/* ... (Keep your existing Login Form JSX here) ... */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -149,12 +156,20 @@ const Login = () => {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <div className="bg-primary-gradient p-3 rounded-2xl shadow-lg shadow-primary/20">
-                <HeartIcon className="h-8 w-8 text-white" />
+                <Heart className="h-8 w-8 text-white" />
               </div>
-              <span className="font-poppins font-bold text-2xl text-primary">Sakhi</span>
+              <span className="font-poppins font-bold text-2xl text-primary">
+                Sakhi
+              </span>
             </div>
-            <h2 className="font-poppins font-semibold text-2xl text-gray-800">Welcome Back</h2>
-            <p className="text-gray-500 mt-2 text-sm">Sign in to continue your wellness journey</p>
+
+            <h2 className="font-poppins font-semibold text-2xl text-gray-800">
+              Welcome Back
+            </h2>
+
+            <p className="text-gray-500 mt-2 text-sm">
+              Sign in to continue your wellness journey
+            </p>
           </div>
 
           {error && (
@@ -195,15 +210,16 @@ const Login = () => {
                   className="w-full px-5 py-3.5 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:ring-2 focus:ring-primary outline-none"
                   placeholder="••••••••"
                 />
+
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute inset-y-0 right-0 pr-4 flex items-center"
                 >
                   {showPassword ? (
-                    <EyeSlashIcon className="h-5 w-5 text-gray-300 hover:text-gray-500" />
+                    <EyeOff className="h-5 w-5 text-gray-300 hover:text-gray-500" />
                   ) : (
-                    <EyeIcon className="h-5 w-5 text-gray-300 hover:text-gray-500" />
+                    <Eye className="h-5 w-5 text-gray-300 hover:text-gray-500" />
                   )}
                 </button>
               </div>
@@ -232,6 +248,7 @@ const Login = () => {
               </Link>
             </p>
           </div>
+
         </div>
       </motion.div>
     </div>

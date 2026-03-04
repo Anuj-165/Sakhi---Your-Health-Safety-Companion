@@ -7,8 +7,8 @@ import {
   InformationCircleIcon,
   CheckCircleIcon
 } from '@heroicons/react/24/outline';
-import PeriodCalendar from '../../../components/PeriodCalendar';
-import api from '../../api/axios';
+import PeriodCalendar from '../components/PeriodCalendar';
+import api from '../api/axios';
 
 interface CycleStatus {
   day_of_cycle: number;

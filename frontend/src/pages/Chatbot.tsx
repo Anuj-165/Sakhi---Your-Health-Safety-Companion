@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ChatBox from '../../../components/ChatBox';
-import BotAnimation from '../../../components/BotAnimation';
+import ChatBox from '../components/ChatBox';
+import BotAnimation from '../components/BotAnimation';
 
 const Chatbot = () => {
   return (

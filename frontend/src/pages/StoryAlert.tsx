@@ -8,7 +8,7 @@ import {
   ScaleIcon,
   HandRaisedIcon
 } from '@heroicons/react/24/outline';
-import api from '../../api/axios'; // Your axios instance with auth headers
+import api from '../api/axios'; // Your axios instance with auth headers
 
 interface AnalysisResult {
   risky: string;
